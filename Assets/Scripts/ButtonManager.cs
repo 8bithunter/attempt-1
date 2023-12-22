@@ -9,9 +9,25 @@ public class ButtonManager : MonoBehaviour
     {
         Application.Quit();
     }
-    public void NextGame()
+
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void LoadGame()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void LoadPond()
+    {
+        SceneManager.LoadScene(2);
     }
 
 }
