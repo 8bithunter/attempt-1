@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FrogEnabler : MonoBehaviour
 {
     public int intfrogs;
+
+    public TextMeshProUGUI frogamount;
 
     public GameObject button1;
     public GameObject button2;
@@ -20,16 +23,25 @@ public class FrogEnabler : MonoBehaviour
 
     public void intfrogplus()
     {
-        intfrogs++;
+        if (intfrogs <= 9)
+        {
+            intfrogs++;
+        }
     }
 
     public void intfrogminus()
     {
-        intfrogs--;
+        if (intfrogs >= 1)
+        {
+            intfrogs--;
+        }
     }
 
     void Update()
     {
+
+        frogamount.text = intfrogs.ToString();
+
         if (intfrogs <= 0)
         {
             button1.SetActive(false);
