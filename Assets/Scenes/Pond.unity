@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 833662726}
   - component: {fileID: 833662725}
   - component: {fileID: 833662724}
-  - component: {fileID: 833662723}
+  - component: {fileID: 833662728}
   m_Layer: 0
   m_Name: Tadpole
   m_TagString: Untagged
@@ -387,20 +387,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &833662723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 833662722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4f5b79ad1d50264e920ad9deda13b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRight: {fileID: 21300000, guid: 9b23d8b1e430c5847b390167f64f7e99, type: 3}
-  spriteLeft: {fileID: 21300000, guid: 34d481a2bdcb5204eb6480c4168a3d86, type: 3}
 --- !u!50 &833662724
 Rigidbody2D:
   serializedVersion: 4
@@ -414,8 +400,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
-  m_AngularDrag: 0.05
+  m_LinearDrag: 4
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -540,6 +526,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &833662728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833662722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb5cc0e89c9ca349909c2e146bc4023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRight: {fileID: 21300000, guid: 9b23d8b1e430c5847b390167f64f7e99, type: 3}
+  spriteLeft: {fileID: 21300000, guid: 34d481a2bdcb5204eb6480c4168a3d86, type: 3}
 --- !u!1 &973470895
 GameObject:
   m_ObjectHideFlags: 0

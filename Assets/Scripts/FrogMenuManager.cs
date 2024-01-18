@@ -10,7 +10,6 @@ public class FrogMenuManager : MonoBehaviour
 
     private void Start()
     {
-        // Get the Button component attached to this GameObject
         button = GetComponent<Button>();
 
         if (button == null)
@@ -20,7 +19,6 @@ public class FrogMenuManager : MonoBehaviour
         }
     }
 
-    // Function to get the sprite of the button
     public Sprite GetButtonSprite()
     {
         if (button != null && button.image != null)

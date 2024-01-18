@@ -22,15 +22,17 @@ public class PondMovement : MonoBehaviour
 
     IEnumerator StartRandomVelocity()
     {
+        System.Random random = new System.Random();
+
         while (true)
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds((float)random.NextDouble() * 2 + 1);
 
-            float randomAngle = Random.Range(30f, 150f);
+            float randomAngle = UnityEngine.Random.Range(30, 150);
 
             Vector2 randomDirection = Quaternion.Euler(0, 0, randomAngle) * Vector2.right;
 
-            body.velocity = randomDirection * 5f;
+            body.velocity = randomDirection * 5;
         }
     }
 
