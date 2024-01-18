@@ -1,22 +1,64 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+public class Tadpole
+{
+    public Sprite Sprite;
+    public string Color;
+    public double Speed;
+
+    public Tadpole(Sprite sprite, string color, int speed)
+    {
+        Sprite = sprite;
+        Color = color;
+        Speed = speed;
+    }
+
+    public Sprite GetSprite()
+    {
+        return this.Sprite;
+    }
+
+}
+
+public class Frog : Tadpole
+{
+    public double JumpHeight;
+
+    public Frog(Sprite sprite, string color, int speed, float jumpHeight)
+        : base(sprite, color, speed)
+    {
+        JumpHeight = jumpHeight;
+    }
+}
+
+public class SpeedComparer : IComparer
+{
+    public int Compare(object x, object y)
+    {
+        return (new CaseInsensitiveComparer()).Compare(((Tadpole)x).Speed,
+               ((Tadpole)y).Speed);
+    }
+}
+
 public class FrogOrder : MonoBehaviour
 {
-    public Image sourceImage1;
-    public Image sourceImage2;
-    public Image sourceImage3;
-    public Image sourceImage4;
-    public Image sourceImage5;
-    public Image sourceImage6;
-    public Image sourceImage7;
-    public Image sourceImage8;
-    public Image sourceImage9;
-    public Image sourceImage10;
+    public Sprite sourceImage1;
+    public Sprite sourceImage2;
+    public Sprite sourceImage3;
+    public Sprite sourceImage4;
+    public Sprite sourceImage5;
+    public Sprite sourceImage6;
+    public Sprite sourceImage7;
+    public Sprite sourceImage8;
+    public Sprite sourceImage9;
+    public Sprite sourceImage10;
 
-    public Image button00;
+    public Button button00;
     public Button button10;
     public Button button20;
     public Button button30;
@@ -27,35 +69,52 @@ public class FrogOrder : MonoBehaviour
     public Button button31;
     public Button button41;
 
-    public class Frog
-    {
-        public Image image;
-        public int number;
+    public Tadpole[] TadpoleArray;
 
-        public Frog(Image image, int number)
+       void Start()
+       {
+            TadpoleArray = new Tadpole[]
+            {
+                new Frog(sourceImage1, "e", 1, 1), new Frog(sourceImage2, "e", 3, 3), new Frog(sourceImage3, "e", 6, 6), new Frog(sourceImage4, "e", 7, 7), new Frog(sourceImage5, "e", 10, 10),
+                new Frog(sourceImage6, "e", 1, 1), new Frog(sourceImage7, "e", 4, 4), new Frog(sourceImage8, "e", 2, 2), new Frog(sourceImage9, "e", 9, 9), new Frog(sourceImage10, "e", 8, 8)
+            };
+       }
+
+        public void SpeedSort()
         {
-            this.image = image;
-            this.number = number;
+            Array.Sort(TadpoleArray, new SpeedComparer());
         }
 
-    }
+       void Update()
+       {
+           Image buttonImage00 = button00.GetComponent<Image>();
+           buttonImage00.sprite = TadpoleArray[0].GetSprite();
 
+           Image buttonImage10 = button10.GetComponent<Image>();
+           buttonImage10.sprite = TadpoleArray[1].GetSprite();
 
-    void Start()
-    {
-        button00 = sourceImage1;
-    }
+           Image buttonImage20 = button20.GetComponent<Image>();
+           buttonImage20.sprite = TadpoleArray[2].GetSprite();
 
-    void Update()
-    {
-        //Frog[,] frogs = {{new Frog(sourceImage1, 5), new Frog(sourceImage2, 3), new Frog(sourceImage3, 6), new Frog(sourceImage4, 7), new Frog(sourceImage5, 10)},
-       //                  {new Frog(sourceImage6, 1), new Frog(sourceImage7, 4), new Frog(sourceImage8, 2), new Frog(sourceImage9, 9), new Frog(sourceImage10, 8)}};
+           Image buttonImage30 = button30.GetComponent<Image>();
+           buttonImage30.sprite = TadpoleArray[3].GetSprite();
 
-       // Button[,] buttons = {{button00, button10, button20, button30, button40},
-        //                     {button01, button11, button21, button31, button41}};
+           Image buttonImage40 = button40.GetComponent<Image>();
+           buttonImage40.sprite = TadpoleArray[4].GetSprite();
 
-        
+           Image buttonImage01 = button01.GetComponent<Image>();
+           buttonImage01.sprite = TadpoleArray[5].GetSprite();
 
+           Image buttonImage11 = button11.GetComponent<Image>();
+           buttonImage11.sprite = TadpoleArray[6].GetSprite();
 
-    }
-}
+           Image buttonImage21 = button21.GetComponent<Image>();
+           buttonImage21.sprite = TadpoleArray[7].GetSprite();
+
+           Image buttonImage31 = button31.GetComponent<Image>();
+           buttonImage31.sprite = TadpoleArray[8].GetSprite();
+
+           Image buttonImage41 = button41.GetComponent<Image>();
+           buttonImage41.sprite = TadpoleArray[9].GetSprite();
+       }
+ }
