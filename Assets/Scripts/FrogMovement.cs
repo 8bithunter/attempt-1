@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class PondMovement : MonoBehaviour
 {
-    public Sprite spriteRight;
-    public Sprite spriteLeft;
-
     private Rigidbody2D body;
     private SpriteRenderer spriteRenderer;
 
-    private void Awake()
+    void OnEnable()
     {
         body = GetComponent<Rigidbody2D>();
 
@@ -40,11 +37,11 @@ public class PondMovement : MonoBehaviour
     {
         if (body.velocity.x > 0.025)
         {
-            spriteRenderer.sprite = spriteRight;
+            spriteRenderer.flipX = true;
         }
         else if (body.velocity.x < -0.025)
         {
-            spriteRenderer.sprite = spriteLeft;
+            spriteRenderer.flipX = false;
         }
     }
 }

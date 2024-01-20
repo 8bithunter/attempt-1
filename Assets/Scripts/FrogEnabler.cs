@@ -8,6 +8,8 @@ public class FrogEnabler : MonoBehaviour
 {
     public int intfrogs;
 
+    public static int staticintfrogs = 0;
+
     public TextMeshProUGUI frogamount;
 
     public GameObject button1;
@@ -39,6 +41,7 @@ public class FrogEnabler : MonoBehaviour
 
     void Update()
     {
+        staticintfrogs = intfrogs;
 
         frogamount.text = intfrogs.ToString();
 

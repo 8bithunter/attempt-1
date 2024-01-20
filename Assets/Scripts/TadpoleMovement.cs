@@ -5,13 +5,10 @@ using System;
 
 public class TadpoleMovement : MonoBehaviour
 {
-    public Sprite spriteRight;
-    public Sprite spriteLeft;
-
     private Rigidbody2D body;
     private SpriteRenderer spriteRenderer;
 
-    private void Awake()
+    void OnEnable()
     {
         body = GetComponent<Rigidbody2D>();
 
@@ -41,11 +38,11 @@ public class TadpoleMovement : MonoBehaviour
     {
         if (body.velocity.x > 0.025)
         {
-            spriteRenderer.sprite = spriteRight;
+            spriteRenderer.flipX = true;
         }
         else if (body.velocity.x < -0.025)
         {
-            spriteRenderer.sprite = spriteLeft;
+            spriteRenderer.flipX = false;
         }
     }
 }
