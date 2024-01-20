@@ -94,7 +94,7 @@ public class FrogOrder : MonoBehaviour
        {
             TadpoleArray = new Tadpole[]
             {
-                new Frog(sourceImage1, "e", 1, 1), new Frog(sourceImage2, "e", 3, 3), new Frog(sourceImage3, "e", 6, 6), new Frog(sourceImage4, "e", 7, 7), new Frog(sourceImage5, "e", 10, 10),
+                new Frog(sourceImage1, "e", 1, 1), new Frog(sourceImage2, "e", 3, 3), new Tadpole(sourceImage3, "e", 6), new Frog(sourceImage4, "e", 7, 7), new Frog(sourceImage5, "e", 10, 10),
                 new Frog(sourceImage6, "e", 1, 1), new Tadpole(sourceImage7, "e", 4), new Frog(sourceImage8, "e", 2, 2), new Frog(sourceImage9, "e", 9, 9), new Frog(sourceImage10, "e", 8, 8)
             };
        }

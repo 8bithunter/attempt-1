@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
+    public Animator transition;
+
     public void QuitGame()
     {
         Application.Quit();
@@ -12,22 +14,31 @@ public class ButtonManager : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(LoadLevel(0));
     }
 
     public void LoadGame()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(LoadLevel(1));
     }
 
     public void LoadPond()
     {
-        SceneManager.LoadScene(2);
+        StartCoroutine(LoadLevel(2));
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(1);
+
+        SceneManager.LoadScene(levelIndex);
     }
 
 }
