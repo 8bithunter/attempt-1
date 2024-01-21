@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class FrogEnabler : MonoBehaviour
 {
-    public int intfrogs;
+    public static int intfrogs = 0;
 
     public static int staticintfrogs = 0;
 
@@ -23,7 +23,7 @@ public class FrogEnabler : MonoBehaviour
     public GameObject button9;
     public GameObject button10;
 
-    public void intfrogplus()
+    public static void intfrogplus()
     {
         if (intfrogs <= 9)
         {
@@ -31,7 +31,7 @@ public class FrogEnabler : MonoBehaviour
         }
     }
 
-    public void intfrogminus()
+    public static void intfrogminus()
     {
         if (intfrogs >= 1)
         {
