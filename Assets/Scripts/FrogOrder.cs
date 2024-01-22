@@ -12,11 +12,12 @@ public class Tadpole
     public double Speed;
     public string Name;
 
-    public Tadpole(Sprite sprite, string color, int speed)
+    public Tadpole(Sprite sprite, string color, string name, double speed)
     {
         Sprite = sprite;
         Color = color;
         Speed = speed;
+        Name = name;
 
     }
 
@@ -47,8 +48,8 @@ public class Frog : Tadpole
 {
     public double JumpHeight;
 
-    public Frog(Sprite sprite, string color, int speed, float jumpHeight)
-        : base(sprite, color, speed)
+    public Frog(Sprite sprite, string color, string name, double speed, float jumpHeight)
+        : base(sprite, color, name, speed)
     {
         JumpHeight = jumpHeight;
     }

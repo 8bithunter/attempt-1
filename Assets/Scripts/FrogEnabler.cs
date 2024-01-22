@@ -10,7 +10,7 @@ public class FrogEnabler : MonoBehaviour
 
     public static int staticintfrogs = 0;
 
-    public TextMeshProUGUI frogamount;
+    public TextMeshProUGUI frogamount; 
 
     public GameObject button1;
     public GameObject button2;
