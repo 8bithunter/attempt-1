@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 
 public class ImageSpriteCopier : MonoBehaviour
@@ -21,6 +22,8 @@ public class ImageSpriteCopier : MonoBehaviour
     public TextMeshProUGUI NameText;
     public TextMeshProUGUI ColourText;
     public TextMeshProUGUI SpeedText;
+    private int FrogIndex;
+    private System.Random random = new System.Random();
 
     public void CopySprite00()
     {
@@ -30,6 +33,7 @@ public class ImageSpriteCopier : MonoBehaviour
             NameText.text = FrogOrder.TadpoleArray[0].Name;
             ColourText.text = FrogOrder.TadpoleArray[0].Color;
             SpeedText.text = FrogOrder.TadpoleArray[0].Speed.ToString();
+            FrogIndex = 0;
         }
         else
         {
@@ -44,6 +48,7 @@ public class ImageSpriteCopier : MonoBehaviour
             NameText.text = FrogOrder.TadpoleArray[1].Name;
             ColourText.text = FrogOrder.TadpoleArray[1].Color;
             SpeedText.text = FrogOrder.TadpoleArray[1].Speed.ToString();
+            FrogIndex = 1;
         }
         else
         {
@@ -58,6 +63,7 @@ public class ImageSpriteCopier : MonoBehaviour
             NameText.text = FrogOrder.TadpoleArray[2].Name;
             ColourText.text = FrogOrder.TadpoleArray[2].Color;
             SpeedText.text = FrogOrder.TadpoleArray[2].Speed.ToString();
+            FrogIndex = 2;
         }
         else
         {
@@ -72,6 +78,7 @@ public class ImageSpriteCopier : MonoBehaviour
             NameText.text = FrogOrder.TadpoleArray[3].Name;
             ColourText.text = FrogOrder.TadpoleArray[3].Color;
             SpeedText.text = FrogOrder.TadpoleArray[3].Speed.ToString();
+            FrogIndex = 3;
         }
         else
         {
@@ -86,6 +93,7 @@ public class ImageSpriteCopier : MonoBehaviour
             NameText.text = FrogOrder.TadpoleArray[4].Name;
             ColourText.text = FrogOrder.TadpoleArray[4].Color;
             SpeedText.text = FrogOrder.TadpoleArray[4].Speed.ToString();
+            FrogIndex = 4;
         }
         else
         {
@@ -100,6 +108,7 @@ public class ImageSpriteCopier : MonoBehaviour
             NameText.text = FrogOrder.TadpoleArray[5].Name;
             ColourText.text = FrogOrder.TadpoleArray[5].Color;
             SpeedText.text = FrogOrder.TadpoleArray[5].Speed.ToString();
+            FrogIndex = 5;
         }
         else
         {
@@ -114,6 +123,7 @@ public class ImageSpriteCopier : MonoBehaviour
             NameText.text = FrogOrder.TadpoleArray[6].Name;
             ColourText.text = FrogOrder.TadpoleArray[6].Color;
             SpeedText.text = FrogOrder.TadpoleArray[6].Speed.ToString();
+            FrogIndex = 6;
         }
         else
         {
@@ -128,6 +138,7 @@ public class ImageSpriteCopier : MonoBehaviour
             NameText.text = FrogOrder.TadpoleArray[7].Name;
             ColourText.text = FrogOrder.TadpoleArray[7].Color;
             SpeedText.text = FrogOrder.TadpoleArray[7].Speed.ToString();
+            FrogIndex = 7;
         }
         else
         {
@@ -142,6 +153,7 @@ public class ImageSpriteCopier : MonoBehaviour
             NameText.text = FrogOrder.TadpoleArray[8].Name;
             ColourText.text = FrogOrder.TadpoleArray[8].Color;
             SpeedText.text = FrogOrder.TadpoleArray[8].Speed.ToString();
+            FrogIndex = 8;
         }
         else
         {
@@ -156,10 +168,17 @@ public class ImageSpriteCopier : MonoBehaviour
             NameText.text = FrogOrder.TadpoleArray[9].Name;
             ColourText.text = FrogOrder.TadpoleArray[9].Color;
             SpeedText.text = FrogOrder.TadpoleArray[9].Speed.ToString();
+            FrogIndex = 9;
         }
         else
         {
             Debug.LogWarning("Source or target image or sprite not found.");
         }
+    }
+
+    public void AgeFrog()
+    {
+        Tadpole FrogToAge = FrogOrder.TadpoleArray[FrogIndex];
+        FrogOrder.TadpoleArray[FrogIndex] = new Frog(FrogToAge.Sprite, FrogToAge.Color, FrogToAge.Name, FrogToAge.Speed, random.NextDouble());
     }
 }

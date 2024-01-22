@@ -48,7 +48,7 @@ public class Frog : Tadpole
 {
     public double JumpHeight;
 
-    public Frog(Sprite sprite, string color, string name, double speed, float jumpHeight)
+    public Frog(Sprite sprite, string color, string name, double speed, double jumpHeight)
         : base(sprite, color, name, speed)
     {
         JumpHeight = jumpHeight;
