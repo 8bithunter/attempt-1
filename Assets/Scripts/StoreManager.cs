@@ -15,6 +15,9 @@ public class StoreManager : MonoBehaviour
     public Sprite GreenFrog;
     public Sprite BlueFrog;
     public Sprite RedFrog;
+    public Sprite GreenTad;
+    public Sprite BlueTad;
+    public Sprite RedTad;
     public Sprite ActiveSprite;
     private string EnteredText;
     private string Colour;
@@ -25,22 +28,22 @@ public class StoreManager : MonoBehaviour
     {
         // Subscribe to the dropdown's OnValueChanged event
         dropdown.onValueChanged.AddListener(OnDropdownValueChanged);
-        ActiveSprite = GreenFrog;
+        ActiveSprite = GreenTad;
     }
 
     private void OnDropdownValueChanged(int index)
     {
         if (dropdown.options[index].text == "Green")
         {
-            ActiveSprite = GreenFrog;
+            ActiveSprite = GreenTad;
             Colour = "Green";
         } else if (dropdown.options[index].text == "Blue")
         {
-            ActiveSprite = BlueFrog;
+            ActiveSprite = BlueTad;
             Colour = "Blue";
         } else if (dropdown.options[index].text == "Red")
         {
-            ActiveSprite = RedFrog;
+            ActiveSprite = RedTad;
             Colour = "Red";
         }
         Debug.Log("Selected option: " + dropdown.options[index].text);

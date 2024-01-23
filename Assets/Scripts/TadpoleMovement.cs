@@ -38,11 +38,11 @@ public class TadpoleMovement : MonoBehaviour
     {
         if (body.velocity.x > 0.025)
         {
-            spriteRenderer.flipX = true;
+            spriteRenderer.flipX = false;
         }
         else if (body.velocity.x < -0.025)
         {
-            spriteRenderer.flipX = false;
+            spriteRenderer.flipX = true;
         }
     }
 }

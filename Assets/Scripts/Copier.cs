@@ -22,6 +22,9 @@ public class ImageSpriteCopier : MonoBehaviour
     public TextMeshProUGUI NameText;
     public TextMeshProUGUI ColourText;
     public TextMeshProUGUI SpeedText;
+    public Sprite GreenFrog;
+    public Sprite BlueFrog;
+    public Sprite RedFrog;
     private int FrogIndex;
     private System.Random random = new System.Random();
 
@@ -179,6 +182,17 @@ public class ImageSpriteCopier : MonoBehaviour
     public void AgeFrog()
     {
         Tadpole FrogToAge = FrogOrder.TadpoleArray[FrogIndex];
-        FrogOrder.TadpoleArray[FrogIndex] = new Frog(FrogToAge.Sprite, FrogToAge.Color, FrogToAge.Name, FrogToAge.Speed, random.NextDouble());
+        Sprite FrogSprite = GreenFrog;
+        if (FrogToAge.Color == "Green")
+        {
+            FrogSprite = GreenFrog;
+        } else if (FrogToAge.Color == "Blue")
+        {
+            FrogSprite = BlueFrog;
+        } else if (FrogToAge.Color == "Red")
+        {
+            FrogSprite = RedFrog;
+        }
+        FrogOrder.TadpoleArray[FrogIndex] = new Frog(FrogSprite, FrogToAge.Color, FrogToAge.Name, FrogToAge.Speed, random.NextDouble());
     }
 }
