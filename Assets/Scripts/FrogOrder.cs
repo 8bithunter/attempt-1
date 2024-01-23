@@ -64,30 +64,20 @@ public class SpeedComparer : IComparer
     }
 }
 
+public class ColourComparer : IComparer
+{
+    public int Compare(object x, object y)
+    {
+        return (new CaseInsensitiveComparer()).Compare(((Tadpole)x).Color,
+               ((Tadpole)y).Color);
+    }
+}
+
 public class FrogOrder : MonoBehaviour
 {
     public Button[] buttons = new Button[10];
 
     public static Tadpole[] TadpoleArray = new Tadpole[10];
-
-    public static FrogOrder instance;
-
-    public static FrogOrder Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<FrogOrder>();
-                if (instance == null)
-                {
-                    GameObject singletonObject = new GameObject("FrogOrder");
-                    instance = singletonObject.AddComponent<FrogOrder>();
-                }
-            }
-            return instance;
-        }
-    }
 
     void Start()
     {
@@ -100,6 +90,11 @@ public class FrogOrder : MonoBehaviour
     public void SpeedSort()
     {
         Array.Sort(TadpoleArray, new SpeedComparer());
+    }
+
+    public void ColourSort()
+    {
+        Array.Sort(TadpoleArray, new ColourComparer());
     }
 
     void Update()

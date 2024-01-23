@@ -35,7 +35,7 @@ public class ImageSpriteCopier : MonoBehaviour
             targetImage.sprite = sourceImage00.sprite;
             NameText.text = FrogOrder.TadpoleArray[0].Name;
             ColourText.text = FrogOrder.TadpoleArray[0].Color;
-            SpeedText.text = FrogOrder.TadpoleArray[0].Speed.ToString();
+            //SpeedText.text = FrogOrder.TadpoleArray[0].Speed.ToString();
             FrogIndex = 0;
         }
         else
@@ -50,7 +50,7 @@ public class ImageSpriteCopier : MonoBehaviour
             targetImage.sprite = sourceImage10.sprite;
             NameText.text = FrogOrder.TadpoleArray[1].Name;
             ColourText.text = FrogOrder.TadpoleArray[1].Color;
-            SpeedText.text = FrogOrder.TadpoleArray[1].Speed.ToString();
+            //SpeedText.text = FrogOrder.TadpoleArray[1].Speed.ToString();
             FrogIndex = 1;
         }
         else
@@ -65,7 +65,7 @@ public class ImageSpriteCopier : MonoBehaviour
             targetImage.sprite = sourceImage20.sprite;
             NameText.text = FrogOrder.TadpoleArray[2].Name;
             ColourText.text = FrogOrder.TadpoleArray[2].Color;
-            SpeedText.text = FrogOrder.TadpoleArray[2].Speed.ToString();
+            // SpeedText.text = FrogOrder.TadpoleArray[2].Speed.ToString();
             FrogIndex = 2;
         }
         else
@@ -80,7 +80,7 @@ public class ImageSpriteCopier : MonoBehaviour
             targetImage.sprite = sourceImage30.sprite;
             NameText.text = FrogOrder.TadpoleArray[3].Name;
             ColourText.text = FrogOrder.TadpoleArray[3].Color;
-            SpeedText.text = FrogOrder.TadpoleArray[3].Speed.ToString();
+            // SpeedText.text = FrogOrder.TadpoleArray[3].Speed.ToString();
             FrogIndex = 3;
         }
         else
@@ -95,7 +95,7 @@ public class ImageSpriteCopier : MonoBehaviour
             targetImage.sprite = sourceImage40.sprite;
             NameText.text = FrogOrder.TadpoleArray[4].Name;
             ColourText.text = FrogOrder.TadpoleArray[4].Color;
-            SpeedText.text = FrogOrder.TadpoleArray[4].Speed.ToString();
+            // SpeedText.text = FrogOrder.TadpoleArray[4].Speed.ToString();
             FrogIndex = 4;
         }
         else
@@ -110,7 +110,7 @@ public class ImageSpriteCopier : MonoBehaviour
             targetImage.sprite = sourceImage01.sprite;
             NameText.text = FrogOrder.TadpoleArray[5].Name;
             ColourText.text = FrogOrder.TadpoleArray[5].Color;
-            SpeedText.text = FrogOrder.TadpoleArray[5].Speed.ToString();
+            // SpeedText.text = FrogOrder.TadpoleArray[5].Speed.ToString();
             FrogIndex = 5;
         }
         else
@@ -125,7 +125,7 @@ public class ImageSpriteCopier : MonoBehaviour
             targetImage.sprite = sourceImage11.sprite;
             NameText.text = FrogOrder.TadpoleArray[6].Name;
             ColourText.text = FrogOrder.TadpoleArray[6].Color;
-            SpeedText.text = FrogOrder.TadpoleArray[6].Speed.ToString();
+            // SpeedText.text = FrogOrder.TadpoleArray[6].Speed.ToString();
             FrogIndex = 6;
         }
         else
@@ -140,7 +140,7 @@ public class ImageSpriteCopier : MonoBehaviour
             targetImage.sprite = sourceImage21.sprite;
             NameText.text = FrogOrder.TadpoleArray[7].Name;
             ColourText.text = FrogOrder.TadpoleArray[7].Color;
-            SpeedText.text = FrogOrder.TadpoleArray[7].Speed.ToString();
+            // SpeedText.text = FrogOrder.TadpoleArray[7].Speed.ToString();
             FrogIndex = 7;
         }
         else
@@ -155,7 +155,7 @@ public class ImageSpriteCopier : MonoBehaviour
             targetImage.sprite = sourceImage31.sprite;
             NameText.text = FrogOrder.TadpoleArray[8].Name;
             ColourText.text = FrogOrder.TadpoleArray[8].Color;
-            SpeedText.text = FrogOrder.TadpoleArray[8].Speed.ToString();
+            // SpeedText.text = FrogOrder.TadpoleArray[8].Speed.ToString();
             FrogIndex = 8;
         }
         else
@@ -170,7 +170,7 @@ public class ImageSpriteCopier : MonoBehaviour
             targetImage.sprite = sourceImage41.sprite;
             NameText.text = FrogOrder.TadpoleArray[9].Name;
             ColourText.text = FrogOrder.TadpoleArray[9].Color;
-            SpeedText.text = FrogOrder.TadpoleArray[9].Speed.ToString();
+            // SpeedText.text = FrogOrder.TadpoleArray[9].Speed.ToString();
             FrogIndex = 9;
         }
         else
